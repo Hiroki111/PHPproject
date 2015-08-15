@@ -4,7 +4,7 @@
 
 <body>
 <?php 
-	echo "<p>Poplate lonng text field</p>\n\n";
+	echo "<p>Populate long text fields</p>\n\n";
 	
 	$host ="localhost";
 	$user ="root";
@@ -19,7 +19,7 @@
 		or die("Coudn't execute query. ".mysqli_error($cxn));
 	
 	while ($data = mysqli_fetch_array($result)) {
-		echo '<p>' . $data['Id'] . ' \n ' . $data['Description'] . "</p>\n";
+		echo '<p> ID: ' .$data['Id'] . ' <p></p> ' .$data['Description'] . "</p>\n";
 	}
 
 	
