@@ -4,17 +4,26 @@
 
 <body>
 <?php 
+	if( $_GET['Id'] )
+	{
+		echo '<p>ID : ' . $_GET['Id']. '</p>';
+		
+	}
+
 	echo "<p>Populate long text fields</p>\n\n";
 	
 	$host ="localhost";
 	$user ="root";
 	$password ="c53160";
 	$dbname ="pattern_table";
+	$Id = $_GET['Id'];
 	
 	$cxn = mysqli_connect($host, $user, $password, $dbname)
 		or die ("Connection failed".mysqli_error($cxn));
 	
-	$query = "SELECT * FROM pattern_table.patterns";
+	
+	
+	$query = "SELECT * FROM pattern_table.patterns WHERE Id = $Id";
 	$result = mysqli_query($cxn, $query)
 		or die("Coudn't execute query. ".mysqli_error($cxn));
 	
