@@ -8,7 +8,7 @@
     <body> 
         <div id="container">         
             <!-- <div id="header"><h2>Sample Header B</h2> </div>  end header -->         
-            <div id="menu"> 
+            <div class="menu"> 
                 <!-- 1st level -->
                 <ul>
                     <h2><li><a>Sample Header</a></li></h2>  
