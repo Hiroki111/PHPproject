@@ -8,12 +8,8 @@
     <body> 
         <div id="container">         
             <!-- <div id="header"><h2>Sample Header B</h2> </div>  end header -->         
-<<<<<<< HEAD
-            <div class="menu"> 
                 <!-- 1st level -->
-=======
             <div id="menu">           
->>>>>>> parent of cfb81b8... Trying dropdown CSS
                 <ul>
                     <!-- 1st level -->
                     <h2><li><a>Sample Header</a></li></h2>  
