@@ -8,15 +8,20 @@
     <body> 
         <div id="container">         
             <!-- <div id="header"><h2>Sample Header B</h2> </div>  end header -->         
+<<<<<<< HEAD
             <div class="menu"> 
                 <!-- 1st level -->
+=======
+            <div id="menu">           
+>>>>>>> parent of cfb81b8... Trying dropdown CSS
                 <ul>
+                    <!-- 1st level -->
                     <h2><li><a>Sample Header</a></li></h2>  
                     <li><b href="#">Home</b></li>              
                     <li>
                         <b href="#">Patterns</b>
-                        <!-- 2nd -->
                         <ul>
+                            <!-- 2nd -->
                             <li><b href ="#">Event</b></li>
                             <li><b href ="#">Case</b></li>
                             <li><b href ="#">Log</b></li>
