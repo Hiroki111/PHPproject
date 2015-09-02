@@ -15,7 +15,6 @@ body {
 
 #menu ul{
 	background: #efefef; 
-	padding: 10px ;
 	list-style-type: none;
 	float: left;
     width: 100%;
@@ -28,8 +27,7 @@ body {
 	float: left;
 	margin: 0;
     text-align: center;
-    padding: 0;
-    padding: 3px 10px;
+    padding: 10px 10px 10px 10px;
     float: left;
 	line-height: 1;
 	cursor: pointer;
@@ -44,41 +42,52 @@ body {
     color: #FFFFFF;
 }
 
-#menu ul li:hover >ul  {
-        display: block;
-    background: #555;
-    color: #fff;
-    
-}
-
-#menu ul li:hover >ul li{
-	overflow:visible;
-	display: block;
-}
-
-#menu ul ul {
+#menu ul li ul {
     display: none;
     position:absolute;
     top: 100%;
     left: 0;
     list-style: none;
+	width: 100%;
 	margin: 0;
     padding:0;
-    
+    z-index: 100;
 }
 
 #menu ul li ul li {
     position: relative;
-	overflow: hidden;
+	padding: 10px 10px 10px 10px;
 	text-align: left;
+	display: block;
+	width: 100%;
+}
+
+#menu ul li:hover >ul  {
+    display: block;
+    
+}
+
+#menu ul li b:hover{
+    color: #00FFCC; 	
+}
+
+#menu ul li:hover >ul li{
 	display: block;
 }
 
-#menu ul li b:last-child ul li{
+#menu ul li ul li ul{
+	left :80%;
+	top: 0;
+}
+
+
+
+/*
+#menu ul li :last-child ul li{
     left: -100%;
      width: 100%;
 	 
-}
+}*/
 
 /*
 #menu ul li:hover ul li:first-child{
