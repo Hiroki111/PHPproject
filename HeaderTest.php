@@ -4,11 +4,11 @@
         <title>Header and Footer Testing</title> 
         <link rel="stylesheet" type="text/css" href="HeaderTestCSS.css"> 
     </head> 
-    
+
     <body> 
         <div id="container">         
             <!-- <div id="header"><h2>Sample Header B</h2> </div>  end header -->         
-                <!-- 1st level -->
+            <!-- 1st level -->
             <div id="menu">           
                 <ul>
                     <!-- 1st level -->

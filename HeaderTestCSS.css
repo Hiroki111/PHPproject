@@ -35,7 +35,7 @@ body {
 }
 
 #menu li a {
-    color: #00FFCC; 	
+    color: #FFFFFF;
 }
 
 #menu li b {    
@@ -68,6 +68,10 @@ body {
 }
 
 #menu ul li b:hover{
+    color: #00FFCC; 	
+}
+
+#menu ul li a:hover{
     color: #00FFCC; 	
 }
 
