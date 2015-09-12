@@ -7,10 +7,7 @@
 	
     <body>
         <?php
-			$host = "localhost";
-			$user = "root";
-			$password = "c53160";
-			$dbname = "pattern_table";
+			include("MySQL_AccountInformation.php");
 			$category = $_GET['Category'];
 		?> 	
         <?php include("menu.php"); ?>

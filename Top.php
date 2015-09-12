@@ -1,7 +1,7 @@
 <!doctype html> 
 <html> 
     <head> 
-        <title>Header and Footer Testing 2</title> 
+        <title>Top</title> 
         <link rel="stylesheet" type="text/css" href="HeaderTestCSS.css"> 
 	</head> 
 	
@@ -9,8 +9,8 @@
         <?php include("menu.php"); ?>
         <div id="mainContainer">           
             <div id="content">             
-                <h2>Header & Footer Testing</h2>             
-                <p>This is where a content would go</p> 
+                <h2>Event Log Imperfection Patterns - Top Page</h2>             
+                <p>Choose one of the menus above</p> 
 			</div> <!-- end content -->                      
             <?php include("footer.html"); ?> 
 		</div> <!-- end mainContainer --> 

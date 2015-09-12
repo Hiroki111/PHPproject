@@ -15,6 +15,9 @@
 			
 			$id = $_POST['Id'];
 			$description = $_POST['newDescription'];
+			$realLifeExample = $_POST['newRealLifeExample'];
+			$affect = $_POST['newAffect'];
+			$manifestation = $_POST['newManifestation'];
 			$remedy = $_POST['newRemedy'];
 			
 			$cxn = mysqli_connect($host, $user, $password, $dbname)
@@ -22,7 +25,10 @@
 			
 			
 			$query = "UPDATE `pattern_table`.`patterns` 
-			SET `Description`='$description', `Remedy`='$remedy' WHERE `Id`='$id';";
+			SET `Description`='$description', `Remedy`='$remedy', 
+			`RealLifeExample` = '$realLifeExample',
+			`Affect` = '$affect',
+			`Manifestation` = '$manifestation' WHERE `Id`='$id';";
 			
 			$result = mysqli_query($cxn, $query)
 			or die("Coudn't execute query. ".mysqli_error($cxn));
@@ -42,4 +48,4 @@
 			<p><a href ="edit_top.php">Return to the top page</a></p>
 			</body>
 			
-			</html>			
+			</html>						

@@ -7,11 +7,8 @@
 	
     <body>
         <?php
-			$host = "localhost";
-			$user = "root";
-			$password = "c53160";
-			$dbname = "pattern_table";
-			$category = $_GET['Category'];
+			include("MySQL_AccountInformation.php");
+			$PatternName = $_GET['PatternName'];
 		?> 	
         <?php include("menu.php"); ?>
         <div id="mainContainer">
@@ -19,14 +16,21 @@
                 <?php
 					$cxn = mysqli_connect($host, $user, $password, $dbname)
 					or die("Connection failed" . mysqli_error($cxn));
-					$query = "SELECT * FROM pattern_table.patterns where Category = '$category';";
+					$query = "SELECT * FROM pattern_table.patterns where PatternName = '$PatternName';";
 					
 					$result = mysqli_query($cxn, $query)
 					or die("Coudn't execute query. " . mysqli_error($cxn));
 					
 					while ($data = mysqli_fetch_array($result)) {
-						echo '<p> ID: ' . $data['Id'] . "</p>\n";
-						echo '<p> Description: </p><p>' . $data['Description'] . "</p>\n";
+						echo '<h3> Pattern Name: </h3><p>' . $data['PatternName'] . " (ID: " . $data['Id'] . ")\n</p>";
+						echo '<h3> Description: </h3><p>' . $data['Description'] . "</p>\n";
+						echo '<h3> Real Life Example: </h3><p>' . $data['RealLifeExample'] . "</p>\n";
+						echo '<h3> Affect: </h3><p>' . $data['Affect'] . "</p>\n";
+						echo '<h3> Manifestation: </h3><p>' . $data['Manifestation'] . "</p>\n";
+						echo '<h3> Remedy: </h3><p>' . $data['Remedy'] . "</p>\n";
+						echo '<h3> SIde Effect: </h3><p>' . $data['SideEffect'] . "</p>\n";
+						echo '<h3> Quality Issu Name: </h3><p>' . $data['QualityIssueName'] . "</p>\n";
+						
 					}
 				?>   
 			</div> <!-- end content -->   
