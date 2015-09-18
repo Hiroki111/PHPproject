@@ -14,21 +14,26 @@
 			$dbname =$_POST['dbname'];
 			
 			$id = $_POST['Id'];
+			$patternName = $_POST['newPatternName'];
 			$description = $_POST['newDescription'];
 			$realLifeExample = $_POST['newRealLifeExample'];
 			$affect = $_POST['newAffect'];
 			$manifestation = $_POST['newManifestation'];
 			$remedy = $_POST['newRemedy'];
+			$sideEffect = $_POST['newSideEffect'];
+			$qualityIssueName = $_POST['newQualityIssueName'];
 			
 			$cxn = mysqli_connect($host, $user, $password, $dbname)
 			or die ("Connection failed".mysqli_error($cxn));	
 			
 			
 			$query = "UPDATE `pattern_table`.`patterns` 
-			SET `Description`='$description', `Remedy`='$remedy', 
+			SET `PatternName` ='$patternName',
+			`Description`='$description', `Remedy`='$remedy', 
 			`RealLifeExample` = '$realLifeExample',
 			`Affect` = '$affect',
-			`Manifestation` = '$manifestation' WHERE `Id`='$id';";
+			`Manifestation` = '$manifestation',
+			`SideEffect` = '$sideEffect' WHERE `Id`='$id';";
 			
 			$result = mysqli_query($cxn, $query)
 			or die("Coudn't execute query. ".mysqli_error($cxn));
@@ -39,13 +44,13 @@
 				}else{
 				echo "<p>NOT updated</p>\n<p>The entered information is following</p>\n";
 				echo "<p>Description: </p>";
-			echo $description;
-			echo "<p>Remedy: </p>";
-			echo $remedy;
+				echo $description;
+				echo "<p>Remedy: </p>";
+				echo $remedy;
 			}
-			?>
-			
-			<p><a href ="edit_top.php">Return to the top page</a></p>
-			</body>
-			
-			</html>						
+		?>
+		
+		<p><a href ="edit_top.php">Return to the top page</a></p>
+	</body>
+	
+</html>						

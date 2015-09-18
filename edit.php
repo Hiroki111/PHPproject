@@ -24,25 +24,34 @@
 			$result = mysqli_query($cxn, $query)
 			or die("Coudn't execute query. ".mysqli_error($cxn));
 			
+			$patternName;
 			$description;
 			$remedy;
 			$realLifeExample;
 			$affect;
 			$manifestation;
+			$sideEffect;
+			$qualityIssueName;
 			
 			while ($data = mysqli_fetch_array($result)) {
-				echo '<p> ID: ' .$data['Id'] . "</p>\n";
-				//echo '<p> Description: </p><p>' .$data['Description'] . "</p>\n";
+				$patternName = $data['PatternName'];
 				$description = $data['Description'];
 				$remedy = $data['Remedy'];
 				$realLifeExample = $data['RealLifeExample'];
 				$affect = $data['Affect'];
 				$manifestation = $data['Manifestation'];
+				$sideEffect = $data['SideEffect'];
+				$qualityIssueName = $data['QualityIssueName'];
 			}
 			/*<input type ="text" name="newDescription" value ="<?php echo $description?>" class ="inputNewDescription" >*/
 			/*<?php echo "<p>$remedy</p>" ?>*/
 		?>	
 		<form action = "update.php" method ="post">
+			Patten Name
+			<br>
+			<textarea class ="inputNewPatternName" 
+			name="newPatternName" wrap ="soft" ><?php echo $patternName ?></textarea>
+			<br>
 			Description;
 			<br>
 			<textarea class ="inputNewDescription" 
@@ -50,24 +59,34 @@
 			<br>
 			Real life example;
 			<br>
-			<textarea class ="inputRealLifeExample" 
+			<textarea class ="inputNewItems" 
 			name="newRealLifeExample" wrap ="soft" ><?php echo $realLifeExample ?></textarea>
 			<br>
 			Affect;
 			<br>
-			<textarea class ="inputAffect" 
+			<textarea class ="inputNewItems" 
 			name="newAffect" wrap ="soft" ><?php echo $affect ?></textarea>
 			<br>
 			Manifestation;
 			<br>
-			<textarea class ="inputManifestation" 
+			<textarea class ="inputNewItems" 
 			name="newManifestation" wrap ="soft" ><?php echo $manifestation ?></textarea>
 			<br>
 			<!-- Edit category, which will be a drop down box -->
 			Remedy;
 			<br>
-			<textarea class ="inputRemedy" 
+			<textarea class ="inputNewItems" 
 			name="newRemedy" wrap ="soft" ><?php echo $remedy ?></textarea>
+			<br>
+			Side Effect;
+			<br>
+			<textarea class ="inputNewItems" 
+			name="newSideEffect" wrap ="soft" ><?php echo $sideEffect ?></textarea>
+			<br>
+			Quality Issue Name
+			<br>
+			<textarea class ="inputNewItems" 
+			name="newQualityIssueName" wrap ="soft" ><?php echo $qualityIssueName ?></textarea>
 			<br>
 			
 			<input type ="hidden" name ="Id" value ="<?php echo $Id ?>">

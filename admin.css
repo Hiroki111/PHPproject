@@ -8,6 +8,12 @@ body{
 	font-weight: bold;
 }
 
+.inputNewPatternName{
+	width: 100px;
+	height:50px;
+	
+}
+
 .inputNewDescription{
 	width: 800px;
 	height: 200px;
@@ -20,8 +26,8 @@ body{
     padding: 5px; 
 } 
 
-.inputNewRemedy{
-	width: 500px;
-	height: 50px;
+.inputNewItems{
+	width: 650px;
+	height:150px;
 	
 }

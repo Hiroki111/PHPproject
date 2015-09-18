@@ -1,11 +1,12 @@
-body { 
-    font-family: arial;	
+body {
+    font-family: arial;
+	margin: 0px;
 }
 
 #container {
     margin: 0 auto;
     width: 100%; 
-} 
+}
 
 #header {
 	list-style-type: none;
@@ -13,8 +14,7 @@ body {
     width: 100%;
 	background-color: #0c0c0c;
 	margin-top: 0;
-
-} 
+}
 
 #header a {
 	text-decoration:none;
@@ -23,82 +23,99 @@ body {
 	
 }
 
-#menu {
-
+#menu {	
 }
 
+/*1st level*/
 #menu ul{
-	margin-top: 0;	
-	background: #efefef; 
+	padding: 0;
+	margin: 0;	
 	list-style-type: none;
+	width: 100%;
 	float: left;
-    width: 97%;
-    background-color: #0c0c0c;	
-	
+    background-color: #0c0c0c;		
 }
 
-
+/*1st level items*/
 #menu ul li {
-position: relative;
-float: left;
-margin: 0;
-text-align: center;
-padding: 10px 10px 10px 10px;
-float: left;
-line-height: 1;
-cursor: pointer;
-
+	position: relative;
+	float: left;
+	text-align: center;
+	padding: 10px 20px;
+	line-height: 1;
+	cursor: pointer;
+	white-space: nowrap;
 }
 
+/*Lists which can be clicked*/
 #menu li a {
     color: #FFFFFF;
 	text-decoration:none;
 	font-weight:bold;
 }
 
-#menu ul li ul {
+/*2nd level list*/
+#menu ul ul {
     display: none;
     position:absolute;
     top: 100%;
     left: 0;
     list-style: none;
 	width: 100%;
-	margin: 0;
-    padding:0;
-    z-index: 100;
+	
 }
 
+/*2nd items*/
 #menu ul li ul li {
     position: relative;
-	padding: 10px 10px 10px 10px;
+	padding: 10px 20px ;
 	text-align: left;
 	display: block;
 	width: 100%;
 }
 
+/*3rd level list*/
+#menu ul ul ul{
+    display: none;
+    position:absolute;
+    top: 0;
+    left: 70%;
+	width: auto; /*This determines the width of each item in the 3rd level*/
+    list-style: none;
+}
+
+/*3rd level items*/
+#menu ul li ul li ul li{
+    position: relative;
+	text-align: left;
+	display: block;
+/* Changing "width" property here doesn't affect the width of each item*/
+}
+
+
+/*When the 1st level items are hovered, the 2nd livel list is shown*/
 #menu ul li:hover >ul  {
     display: block;
     
 }
 
+/*Hovered itemes will be in a different collor*/
 #menu ul li a:hover{
     color: #00FFCC; 	
 }
-
-#menu ul li:hover >ul li{
+/*
+	#menu ul li:hover >ul li{
 	display: block;
-}
+}*/
 
+/*When the 2nd level items are hovered, the 3rd livel list is shown*/
 #menu ul li ul li:hover >ul li{
 	display: block;
 }
 
-#menu ul li ul li ul{
-	left :80%;
-	top: 0;
-}
+
 /*
-#menu ul li ul li ul li{
+	#menu ul li ul li ul li{
 	position: relative;
 	padding: 10px 10px 10px 10px;
 	text-align: left;
@@ -127,34 +144,34 @@ cursor: pointer;
 	border-radius: 0 0 3px 3px;
 }*/
 
-
-#mainContainer {
-    float: left;
-    width: 100%;
-}
+/*
+	#mainContainer {
+	float: left;
+	width: 100%;
+}*/
 
 #content {
-    clear: left;
-    float: left;
-    width: 65%;
-    padding: 20px 0;
-    margin: 0 0 0 5%;
-    display: inline;
+	clear: left;
+	float: left;
+	width: 65%;
+	padding: 20px 0;
+	margin: 0 0 0 5%;
+	display: inline;
 }
-
-#sidebar {
-    float: right;
-    width: 30%;
-    padding: 20px 0;
-    margin: 0;
-    display: inline;
-    background-color: #CCCCCC;
-}
+/*
+	#sidebar {
+	float: right;
+	width: 30%;
+	padding: 20px 0;
+	margin: 0;
+	display: inline;
+	background-color: #CCCCCC;
+}*/
 
 #footer {
-    clear: left;
-    background-color: #CCCCCC;
-    text-align: center;
-    padding: 20px;
-    height: 1%;
+	clear: left;
+	background-color: #CCCCCC;
+	text-align: center;
+	padding: 20px;
+	height: 1%;
 }
