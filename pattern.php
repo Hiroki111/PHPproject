@@ -22,7 +22,7 @@
 					or die("Coudn't execute query. " . mysqli_error($cxn));
 					
 					//echo '<a href = "html5.gif">TEST</a>';
-					//echo '<img src ="html5.gif">'; 
+					//echo '<img src ="images/sample.animation.gif">'; 
 					
 					while ($data = mysqli_fetch_array($result)) {
 						echo '<h3> Pattern Name: </h3><p>' . $data['PatternName'] . " (ID: " . $data['Id'] . ")\n</p>";
