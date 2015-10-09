@@ -14,7 +14,7 @@
 				echo '<p> Chosen ID : ' . $_GET['Id']. '</p>';		
 			}
 			
-			include("MySQL_AccountInformation.php");
+			include(dirname(__DIR__).'/MySQL_AccountInformation.php');
 			$Id = $_GET['Id'];
 			
 			$cxn = mysqli_connect($host, $user, $password, $dbname)
@@ -43,8 +43,7 @@
 				$sideEffect = $data['SideEffect'];
 				$qualityIssueName = $data['QualityIssueName'];
 			}
-			/*<input type ="text" name="newDescription" value ="<?php echo $description?>" class ="inputNewDescription" >*/
-			/*<?php echo "<p>$remedy</p>" ?>*/
+			
 		?>	
 		<form action = "update.php" method ="post">
 			Patten Name

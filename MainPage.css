@@ -23,8 +23,6 @@ body {
 	
 }
 
-#menu {	
-}
 
 /*1st level*/
 #menu ul{
@@ -103,52 +101,13 @@ body {
 #menu ul li a:hover{
     color: #00FFCC; 	
 }
-/*
-	#menu ul li:hover >ul li{
-	display: block;
-}*/
+
 
 /*When the 2nd level items are hovered, the 3rd livel list is shown*/
 #menu ul li ul li:hover >ul li{
 	display: block;
 }
 
-
-/*
-	#menu ul li ul li ul li{
-	position: relative;
-	padding: 10px 10px 10px 10px;
-	text-align: left;
-	display: block;
-	width: 100%;
-}*/
-
-
-
-/*
-	#menu ul li :last-child ul li{
-    left: -100%;
-	width: 100%;
-	
-}*/
-
-/*
-	#menu ul li:hover ul li:first-child{
-	border-top: 0;
-	}
-	#menu ul li:hover ul li:last-child{
-	border-bottom: 0;
-	}
-	
-	#menu ul li:hover ul li:last-child {
-	border-radius: 0 0 3px 3px;
-}*/
-
-/*
-	#mainContainer {
-	float: left;
-	width: 100%;
-}*/
 
 #content {
 	clear: left;
@@ -158,15 +117,6 @@ body {
 	margin: 0 0 0 5%;
 	display: inline;
 }
-/*
-	#sidebar {
-	float: right;
-	width: 30%;
-	padding: 20px 0;
-	margin: 0;
-	display: inline;
-	background-color: #CCCCCC;
-}*/
 
 #footer {
 	clear: left;

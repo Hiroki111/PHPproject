@@ -33,7 +33,8 @@
 			`RealLifeExample` = '$realLifeExample',
 			`Affect` = '$affect',
 			`Manifestation` = '$manifestation',
-			`SideEffect` = '$sideEffect' WHERE `Id`='$id';";
+			`SideEffect` = '$sideEffect',
+			`QualityIssueName`='$qualityIssueName' WHERE `Id`='$id';";
 			
 			$result = mysqli_query($cxn, $query)
 			or die("Coudn't execute query. ".mysqli_error($cxn));

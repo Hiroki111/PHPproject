@@ -1,8 +1,11 @@
 <!doctype html> 
 <html> 
     <head> 
-        <title>Header and Footer Testing 2</title> 
-        <link rel="stylesheet" type="text/css" href="HeaderTestCSS.css"> 
+        <title>Header and Footer Testing 2</title>
+		<script type ="text/javascript"
+		src="https://code.jquery.com/jquery-1.9.1.min.js">
+		</script>
+        <link rel="stylesheet" type="text/css" href="MainPage.css"> 
 	</head> 
 	
     <body>
@@ -21,9 +24,24 @@
 					$result = mysqli_query($cxn, $query)
 					or die("Coudn't execute query. " . mysqli_error($cxn));
 					
-					//echo '<a href = "html5.gif">TEST</a>';
-					//echo '<img src ="images/sample.animation.gif">'; 
-					
+				?>
+				<script type ="text/javascript">
+					$(document).ready(function() 
+					{
+						$("#animatedImage").hover(
+						function(){
+							//While it is hovered
+							var aniamtedImage = document.getElementById("animatedImage").getAttribute("data-animated");
+							$(this).attr("src", aniamtedImage);
+						},
+						function(){
+							var stillImage = document.getElementById("animatedImage").getAttribute("data-still");
+							//When the mouse goes out
+							$(this).attr("src", stillImage);
+						});
+					});
+				</script>
+				<?php
 					while ($data = mysqli_fetch_array($result)) {
 						echo '<h3> Pattern Name: </h3><p>' . $data['PatternName'] . " (ID: " . $data['Id'] . ")\n</p>";
 						echo "<h3> Description: </h3><p>" . $data['Description'] . "</p>\n";
@@ -40,6 +58,5 @@
 			<?php include("footer.html"); ?> 
 			<!-- end footer -->          
 		</div> <!-- end mainContainer --> 
-        <!--</div> <!-- end container -->
 	</body> 
 </html>
