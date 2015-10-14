@@ -87,7 +87,7 @@ body {
     position: relative;
 	text-align: left;
 	display: block;
-/* Changing "width" property here doesn't affect the width of each item*/
+	/* Changing "width" property here doesn't affect the width of each item*/
 }
 
 
@@ -127,6 +127,25 @@ body {
 }
 
 #contact h4{
-	 margin:1px;
+	margin:1px;
     padding:1px;
+}
+
+.purposeOfContact{
+	width: 500px;
+	height: 100px;	
+}
+
+.researchTools{
+	width: 250px;
+	height: 50px;
+}
+
+.familiarityWithProcessMining{
+	width: 500px;
+	height: 100px;	
+}
+
+.datasetAnalysed{
+	width: 60px;
 }

@@ -8,14 +8,14 @@
     <body> 
         <?php 
 			include("menu.php");
-			include("MySQL_AccountInformation.php");
+			include("MySQL_AccountInformation.php"); //Is it necessary? menu.php includes it.
 		?>
         <div id="mainContainer">           
             <div id="content">  
 				<div id="contact">
 					<h2>Contact Us</h2>     
 					
-					<form action = "Contact.php" method ="post">
+					<form action = "Contact_sent.php" method ="post">
 						<h4>Name</h4>
 						<input type="text" name="name">
 						<h4>Email</h4>
@@ -25,30 +25,31 @@
 						<h4>Role</h4>
 						<input type="text" name="role">		
 						<h4>Purpose of Contact</h4>
-						<textarea 
+						<textarea class ="purposeOfContact"
 						name="purposeOfContact" wrap ="soft" ></textarea>
 						<h4>Reseacrh Experience</h4>
 						<table>
 							<tr>
-								<td align="right" style ="padding-left:10px">  Year: </td>
-								<td align="left"><input type="number" name="year" min="0" max="99"> </td>
+								<td align="right" style ="padding-left:12px">  Year: </td>
+								<td align="left"><input type="number" name="year" value ="0" min="0" max="99"> </td>
 							</tr>
 							<tr>
-								<td align="right" style ="padding-left:10px">  Month: </td>
-								<td align="left"><input type="number" name="month" min="0" max="12"></td>
+								<td align="right" style ="padding-left:12px">  Month: </td>
+								<td align="left"><input type="number" name="month" value ="0" min="0" max="12"></td>
 							</tr>
 						</table>
 						<h4>What tools/software do you use to analyse data?</h4>
 						<textarea 
-						name="purposeOfContact" wrap ="soft" ></textarea>
+						name="researchTools" wrap ="soft" class ="researchTools"></textarea>
+						<h4>Please describe how familiar you think you are with process mining</h4>
+						<textarea class="familiarityWithProcessMining"
+						name="familiarityWithProcessMining" wrap ="soft" ></textarea>						
+						<h4>How many datasets have you analysed so far?</h4>
+						<input type="number" name="datasetAnalysed" class="datasetAnalysed" value ="0" min="0">
 						
 						
 						
-						<input type ="hidden" name ="host" value ="<?php echo $host ?>">
-						<input type ="hidden" name ="user" value ="<?php echo $user ?>">
-						<input type ="hidden" name ="password" value ="<?php echo $password ?>">
-						<input type ="hidden" name ="dbname" value ="<?php echo $dbname ?>">
-						
+						<br><br>
 						<input type="submit" value="SEND" />
 					</form>
 					<p></p>

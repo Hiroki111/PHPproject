@@ -24,7 +24,7 @@
 			$qualityIssueName = $_POST['newQualityIssueName'];
 			
 			$cxn = mysqli_connect($host, $user, $password, $dbname)
-			or die ("Connection failed".mysqli_error($cxn));	
+			or die ("Connection failed.".mysqli_error($cxn));	
 			
 			
 			$query = "UPDATE `pattern_table`.`patterns` 
