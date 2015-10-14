@@ -55,39 +55,42 @@
 					
 					
 					$to = $email;
-					$subject = 'Confirmation email from Event Log Imperfection Patterns';
-					$message = '
-					<html>
-					<head>
-					<title>Birthday Reminders for August</title>
-					</head>
-					<body>
-					<p>Here are the birthdays upcoming in August!</p>
-					<table>
-					<tr>
-					<th>Person</th><th>Day</th><th>Month</th><th>Year</th>
-					</tr>
-					<tr>
-					<td>Joe</td><td>3rd</td><td>August</td><td>1970</td>
-					</tr>
-					<tr>
-					<td>Sally</td><td>17th</td><td>August</td><td>1973</td>
-					</tr>
-					</table>
-					</body>
-					</html>
-					';
 					
-					$headers  = 'MIME-Version: 1.0' . "\r\n";
-					$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+					require 'PHPMailer-master/PHPMailerAutoload.php';
 					
+					$mail = new PHPMailer();
+					
+					$mail->isSMTP();
+					$mail->Host = 'tls://smtp.gmail.com:587';
+					
+					/*$mail->SMTPSecure ='ssl';
+					$mail->Host = "smtp.gmail.com";
+					$mail->Port = 465;*/
+					
+					//$mail->SMTPDebug = 1;
+					
+					//$mail->IsHTML(true);
+					$mail->SMTPAuth = true;
+					$mail->Username = "mitsuke1116@gmail.com";
+					$mail->Password = "takahashi";
+					
+					$mail->addAddress($to);  
+					$mail->setFrom('mitsuke1116@gmail.com', 'Event Log Imperfection Patterns');
+					$mail->Subject ="Confirmation mail from Event Log Imperfection Patterns";
+					$mail->Body = "Dear $name\nWe have received your submission.
+					\nThank you for sharing your work.";
 					
 					if($result){
 						echo "<p>Submission is done.</p>";
-						echo "<p>A confirmation email has been sent to your email address.</p>";						
 					}
 					
-					$mysqli->close();
+					if (!$mail->Send()){
+						echo("Failed to send mail. Error:".$mail->ErrorInfo);
+						}else{
+						echo"<p>A confirmation email has been sent to your email address.</p>";
+					}
+					
+					
 				?>
 				
 				
