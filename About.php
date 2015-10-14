@@ -1,7 +1,7 @@
 <!doctype html> 
 <html> 
     <head> 
-        <title>Top</title> 
+        <title>About</title> 
         <link rel="stylesheet" type="text/css" href="MainPage.css"> 
 	</head>
 	
@@ -9,8 +9,9 @@
         <?php include("menu.php"); ?>
         <div id="mainContainer">           
             <div id="content">             
-                <h2>Event Log Imperfection Patterns - Top Page</h2>             
-                <p>Choose one of the menus above</p> 
+                <h2>About Event Log Imperfection Patterns</h2>             
+                <!-- contents come here -->
+				<p></p>
 			</div> <!-- end content -->                      
             <?php include("footer.html"); ?> 
 		</div> <!-- end mainContainer --> 

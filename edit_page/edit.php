@@ -71,7 +71,6 @@
 			<textarea class ="inputNewItems" 
 			name="newManifestation" wrap ="soft" ><?php echo $manifestation ?></textarea>
 			<br>
-			<!-- Edit category, which will be a drop down box -->
 			Remedy;
 			<br>
 			<textarea class ="inputNewItems" 
