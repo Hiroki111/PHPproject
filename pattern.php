@@ -55,8 +55,7 @@
 					}
 				?>   
 			</div> <!-- end content -->   
-			<?php include("footer.html"); ?> 
-			<!-- end footer -->          
+			<?php include("footer.html"); ?><!-- end footer -->          
 		</div> <!-- end mainContainer --> 
 	</body> 
 </html>

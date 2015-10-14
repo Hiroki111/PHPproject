@@ -11,7 +11,7 @@
 		?>
         <div id="mainContainer">           
             <div id="content">  
-					<h2>Contact Us</h2>     
+				<h2>Contact Us</h2>     
 				<!--
 					1, get the posted information.
 					2, Access DB 
@@ -45,17 +45,49 @@
 					(`Name`, `Email`, `Affiliation`, `Role`, `PurposeOfContact`, 
 					`ResearchExperience(y/m)`, `ResearchTools`, `DatasetAnalysed`, 
 					`FamiliarityWithProcessMining`) 
-					VALUES ('$name', '$email', '$affiliation', '$role', '$purposeOfContact', 
-					'$researchExperience', '$researchTools', '$datasetAnalysed', '$familiarityWithProcessMining');";
+					VALUES 
+					('$name', '$email', '$affiliation', '$role', '$purposeOfContact', 
+					'$researchExperience', '$researchTools', '$datasetAnalysed', 
+					'$familiarityWithProcessMining');";
 					
 					$result = mysqli_query($cxn, $query)
 					or die("Coudn't execute query. ".mysqli_error($cxn));
 					
+					
+					$to = $email;
+					$subject = 'Confirmation email from Event Log Imperfection Patterns';
+					$message = '
+					<html>
+					<head>
+					<title>Birthday Reminders for August</title>
+					</head>
+					<body>
+					<p>Here are the birthdays upcoming in August!</p>
+					<table>
+					<tr>
+					<th>Person</th><th>Day</th><th>Month</th><th>Year</th>
+					</tr>
+					<tr>
+					<td>Joe</td><td>3rd</td><td>August</td><td>1970</td>
+					</tr>
+					<tr>
+					<td>Sally</td><td>17th</td><td>August</td><td>1973</td>
+					</tr>
+					</table>
+					</body>
+					</html>
+					';
+					
+					$headers  = 'MIME-Version: 1.0' . "\r\n";
+					$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+					
+					
 					if($result){
 						echo "<p>Submission is done.</p>";
-						echo "<p>A confirmation email has been sent to your email address.</p>";
-						
+						echo "<p>A confirmation email has been sent to your email address.</p>";						
 					}
+					
+					$mysqli->close();
 				?>
 				
 				

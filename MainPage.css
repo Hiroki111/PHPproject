@@ -119,17 +119,20 @@ body {
 }
 
 #footer {
-	clear: left;
+	clear: both;
 	background-color: #CCCCCC;
 	text-align: center;
 	padding: 20px;
-	height: 1%;
+	height: 5%;
+	position:fixed;
+	bottom:0;
+	width: 100%;
 }
 
 #contact h4{
 	margin:1px;
     padding:1px;
-}
+	}
 
 .purposeOfContact{
 	width: 500px;

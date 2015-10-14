@@ -3,7 +3,7 @@
     <head> 
         <title>Top</title> 
         <link rel="stylesheet" type="text/css" href="MainPage.css"> 
-	</head>
+	</head> 
 	
     <body> 
         <?php include("menu.php"); ?>
