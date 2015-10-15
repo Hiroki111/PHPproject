@@ -13,14 +13,20 @@
             <div id="content">  
 				<h2>Contact Us</h2>     
 				<!--
-					1, get the posted information.
+					Summary of the function of this page
+					1, Read the posted information by POST method.
 					2, Access DB 
-					3, See if there is something wrong with accessing
-					If unsuccessful, warning message 
+					3, Execute SQL query to insert the new contact, Show a message 
+					"Submission is done, a confirmation email was sent."
+					4. Send email to both the visitor and admin   
 					
-					4. Execute the update query, Show a message 
-					"Updata is done, a confirmation email was sent. Return to the top page"
-					5. Send email to both the visitor and admin   
+					Included files
+					1, MailContents.php.
+					   This contains the contents of the confirmation emails for
+					   both the visitor and admin.
+					2, MailServerAccountInformation.php
+					   This contains SMTP information, mail sender and the admin's
+					   email addresses
 				-->
 				
 				<?php
@@ -54,31 +60,30 @@
 					or die("Coudn't execute query. ".mysqli_error($cxn));
 					
 					
-					$to = $email;
+					$visitor = $email;
 					
 					require 'PHPMailer-master/PHPMailerAutoload.php';
-					
+					include("MailServerAccountInformation.php");
+					include("MailContents.php");
 					$mail = new PHPMailer();
 					
 					$mail->isSMTP();
-					$mail->Host = 'tls://smtp.gmail.com:587';
+					$mail->SMTPSecure =$Authentication;
+					$mail->Host = $SMTPHost;
+					$mail->Port = $Port;
 					
-					/*$mail->SMTPSecure ='ssl';
-					$mail->Host = "smtp.gmail.com";
-					$mail->Port = 465;*/
-					
-					//$mail->SMTPDebug = 1;
-					
-					//$mail->IsHTML(true);
 					$mail->SMTPAuth = true;
-					$mail->Username = "mitsuke1116@gmail.com";
-					$mail->Password = "takahashi";
+					$mail->Username = $SMTPUsername;
+					$mail->Password = $SMTPPassword;
 					
-					$mail->addAddress($to);  
-					$mail->setFrom('mitsuke1116@gmail.com', 'Event Log Imperfection Patterns');
-					$mail->Subject ="Confirmation mail from Event Log Imperfection Patterns";
-					$mail->Body = "Dear $name\nWe have received your submission.
-					\nThank you for sharing your work.";
+					$mail->addAddress($visitor);
+					$mail->setFrom($SendersAddress, $Sender);
+					$mail->Subject =$Subject;
+					$mail->Body = $Body;
+					
+					//The line below is used to see information for debugging.
+					//Usually, it should be commented out
+					//$mail->SMTPDebug = 1;
 					
 					if($result){
 						echo "<p>Submission is done.</p>";
@@ -88,8 +93,12 @@
 						echo("Failed to send mail. Error:".$mail->ErrorInfo);
 						}else{
 						echo"<p>A confirmation email has been sent to your email address.</p>";
+						$mail->ClearAddresses();
+						$mail->addAddress($AdminsAddress);
+						$mail->Subject =$SubjectForAdmin;
+						$mail->Body = $BodyForAdmin;
+						$mail->Send();
 					}
-					
 					
 				?>
 				
