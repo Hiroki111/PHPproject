@@ -69,9 +69,9 @@
 			</ul>                        
 		</li>                    
 		<li><a href="About.php">About</a></li>
-		<li><a href="#">Links</a></li>
+		<li><a href="Link.php">Links</a></li>
 		<li><a href="Impact.php">Impact</a></li>
-		<li><a href="#">Documentation</a></li>
+		<li><a href="Documentation.php">Documentation</a></li>
 		<li><a href="Contact.php">Contact</a></li>           
 	</ul>         
 </div>	

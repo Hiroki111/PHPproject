@@ -9,7 +9,7 @@
         <?php include("menu.php"); ?>
         <div id="mainContainer">           
             <div id="content">             
-                <h2>About Event Log Imperfection Patterns</h2>             
+                <h2>About - Event Log Imperfection Patterns</h2>             
                 <!-- contents come here -->
 				<p></p>
 			</div> <!-- end content -->                      
