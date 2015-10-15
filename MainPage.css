@@ -8,6 +8,10 @@ body {
     width: 100%; 
 }
 
+#mainContainer{
+
+}
+
 #header {
 	list-style-type: none;
 	float: left;
@@ -151,4 +155,21 @@ body {
 
 .datasetAnalysed{
 	width: 60px;
+}
+
+.white-textA {
+    margin: 5px;
+}
+
+.white-textB {
+    margin: 10px;
+}
+
+.white-textC {
+    margin: 15px;
+}
+
+.no-margin {
+	margin-top:0cm;
+	margin-bottom:0cm;
 }

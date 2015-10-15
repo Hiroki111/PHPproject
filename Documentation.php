@@ -38,37 +38,23 @@
 					$sub_sections = array_unique($sub_sections);
 					
 					foreach($sections as $section){
-						echo "<h3>". $section ."</h3>";
+						echo '<h3 class="white-textA">'. $section ."</h3>";
 						foreach($sub_sections as $sub_section){
 							if(in_array($section.$sub_section, $section_pair)){
-								echo "<h4>". $sub_section ."</h4>";
+								echo '<h4 class="white-textB">'. $sub_section ."</h4>";
 							}
 							
 							foreach($objects as $obj){
 								if($obj['Section'] == $section && $obj['Sub_section'] == $sub_section){
-									echo "<p>". $obj['Author'] ."</p>";
+									echo '<p class="white-textC no-margin";>'. $obj['Author'] ."</p>";
+									echo '<a href="'.$obj['URL'].'" class="white-textC no-margin";>'.$obj['Title']."</a>";
+									echo '<p class="white-textC no-margin";> Publisher : '. $obj['Publisher'] ."</p>
+									<br>";
 								}
 							}
 						}
 					}
 					
-					
-					while ($data = mysqli_fetch_array($result)) {
-						
-						if($data['Section'] == "Key Papers"){
-							echo "! ";
-							}else if($data['Section'] == "Key Papers"){
-							
-						}
-					}
-					
-					
-					//echo '<a href ='. $data['URL'] .'>'. $data['LinkText'] .'</a><p>'. $data['Description'] .'</p>';	
-					
-					
-					
-					
-					echo '<a href="documents/BPM-06-22.pdf">link</a>';
 					
 				?>
 				

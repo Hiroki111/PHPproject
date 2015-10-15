@@ -2,7 +2,9 @@
 <html> 
     <head> 
         <title>Contact</title> 
-        <link rel="stylesheet" type="text/css" href="MainPage.css"> 
+        <link rel="stylesheet" type="text/css" href="MainPage.css">
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script type="text/javascript" src="./footerFixed.js"></script>
 	</head>
 	
     <body> 
@@ -54,7 +56,7 @@
 						<input type="submit" value="SEND" />
 					</form>
 					<p></p>
-				</div id="contact">
+				</div><!-- end contact -->
 			</div> <!-- end content -->                      
 			<?php include("footer.html"); ?> 
 		</div> <!-- end mainContainer --> 

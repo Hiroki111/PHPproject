@@ -3,6 +3,7 @@
     <head> 
         <title>Link</title> 
         <link rel="stylesheet" type="text/css" href="MainPage.css"> 
+		<script type="text/javascript" src="http://blog.webcreativepark.net/sample/js/36/footerFixed.js"></script>
 	</head>
 	
     <body> 
