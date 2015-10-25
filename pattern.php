@@ -43,7 +43,7 @@
 				</script>
 				<?php
 					while ($data = mysqli_fetch_array($result)) {
-						echo '<h3> Pattern Name: </h3><p>' . $data['PatternName'] . " (ID: " . $data['Id'] . ")\n</p>";
+						echo '<h3> Pattern Name: </h3><p>' . $data['PatternName'] . "\n</p>";
 						echo "<h3> Description: </h3><p>" . $data['Description'] . "</p>\n";
 						echo '<h3> Real Life Example: </h3><p>' . $data['RealLifeExample'] . "</p>\n";
 						echo '<h3> Affect: </h3><p>' . $data['Affect'] . "</p>\n";
@@ -51,7 +51,7 @@
 						echo '<h3> Remedy: </h3><p>' . $data['Remedy'] . "</p>\n";
 						echo '<h3> SIde Effect: </h3><p>' . $data['SideEffect'] . "</p>\n";
 						echo '<h3> Quality Issue Name: </h3><p>' . $data['QualityIssueName'] . "</p>\n";
-						
+						echo '<h3> Quality Issue: </h3><p>' . $data['QualityIssue'] . "</p>\n";
 					}
 				?>   
 			</div> <!-- end content -->   

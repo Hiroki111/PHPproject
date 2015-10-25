@@ -2,7 +2,8 @@
 <html> 
     <head> 
         <title>Submission - done</title> 
-        <link rel="stylesheet" type="text/css" href="MainPage.css"> 
+        <link rel="stylesheet" type="text/css" href="MainPage.css">
+		<script type="text/javascript" src="http://blog.webcreativepark.net/sample/js/36/footerFixed.js"></script>
 	</head>
 	
     <body> 
@@ -22,11 +23,11 @@
 					
 					Included files
 					1, MailContents.php.
-					   This contains the contents of the confirmation emails for
-					   both the visitor and admin.
+					This contains the contents of the confirmation emails for
+					both the visitor and admin.
 					2, MailServerAccountInformation.php
-					   This contains SMTP information, mail sender and the admin's
-					   email addresses
+					This contains SMTP information, mail sender and the admin's
+					email addresses
 				-->
 				
 				<?php
@@ -35,13 +36,11 @@
 					$affiliation = $_POST['affiliation'];
 					$role = $_POST['role'];
 					$purposeOfContact = $_POST['purposeOfContact'];
-					$year = $_POST['year'];
-					$month = $_POST['month'];
+					$researchExperience = $_POST['researchExperience'];
 					$researchTools = $_POST['researchTools'];
 					$familiarityWithProcessMining = $_POST['familiarityWithProcessMining'];
 					$datasetAnalysed = $_POST['datasetAnalysed'];
 					
-					$researchExperience = $year."/".$month;
 					
 					
 					$cxn = mysqli_connect($host, $user, $password, $dbname)
@@ -49,7 +48,7 @@
 					
 					$query = "INSERT INTO `pattern_table`.`contact_information` 
 					(`Name`, `Email`, `Affiliation`, `Role`, `PurposeOfContact`, 
-					`ResearchExperience(y/m)`, `ResearchTools`, `DatasetAnalysed`, 
+					`ResearchExperience(year)`, `ResearchTools`, `DatasetAnalysed`, 
 					`FamiliarityWithProcessMining`) 
 					VALUES 
 					('$name', '$email', '$affiliation', '$role', '$purposeOfContact', 
@@ -90,7 +89,9 @@
 					}
 					
 					if (!$mail->Send()){
-						echo("Failed to send mail. Error:".$mail->ErrorInfo);
+						//The line below is used to see error information.
+						//Usually, it should be commented out
+						//echo("Failed to send mail. Error:".$mail->ErrorInfo);
 						}else{
 						echo"<p>A confirmation email has been sent to your email address.</p>";
 						$mail->ClearAddresses();
