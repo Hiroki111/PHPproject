@@ -6,11 +6,13 @@
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 		<script type="text/javascript" src="./footerFixed.js"></script>
 		<script>
+			
 			function varidateForm(){
 				var name = document.forms["contactForm"]["name"].value;
 				var email = document.forms["contactForm"]["email"].value;
 				var affiliation = document.forms["contactForm"]["affiliation"].value;
 				var role = document.forms["contactForm"]["role"].value;
+				var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 				
 				var mustFields = [name, email, affiliation, role];
 				var filled = true;
@@ -20,7 +22,11 @@
 						alert("The following fields must be filled\n\nName, Email, Affiliation and Role");
 						return false;
 					}
-				}				
+				}
+				if(!filter.test(email)){
+					alert("Your email address is invalid.");
+					return false;
+				}
 				return true;				
 			}
 		</script>
@@ -49,7 +55,7 @@
 						<h4>Purpose of Contact</h4>
 						<textarea class ="purposeOfContact"
 						name="purposeOfContact" wrap ="soft" ></textarea>
-						<h4>Reseacrh Experience</h4>
+				<!--	<h4>Reseacrh Experience</h4>
 						<input type="radio" name ="researchExperience" value="0-1" checked>0 - 1 year
 						<br>
 						<input type="radio" name ="researchExperience" value="1-2">1 - 2 years
@@ -66,7 +72,7 @@
 						<input type ="radio" name ="familiarityWithProcessMining" value ="Not familiar">Not familiar
 						<h4>How many datasets have you analysed so far?</h4>
 						<input type="number" name="datasetAnalysed" class="datasetAnalysed" value ="0" min="0">
-						<br><br>
+				-->		<br><br>
 						<input type="submit" value="SEND" />
 					</form>
 					<p></p>

@@ -36,15 +36,29 @@
 					$affiliation = $_POST['affiliation'];
 					$role = $_POST['role'];
 					$purposeOfContact = $_POST['purposeOfContact'];
+				/*	Before remove this commenting, please make sure that
+					the corresponding parts in Contact.php are valid too. 
+				    
 					$researchExperience = $_POST['researchExperience'];
 					$researchTools = $_POST['researchTools'];
 					$familiarityWithProcessMining = $_POST['familiarityWithProcessMining'];
 					$datasetAnalysed = $_POST['datasetAnalysed'];
-					
+				*/	
 					
 					
 					$cxn = mysqli_connect($host, $user, $password, $dbname)
 					or die ("Connection failed".mysqli_error($cxn));
+					
+					//While research experience and related fields have to be hidden,
+					//please use this query.
+					$query = "INSERT INTO `pattern_table`.`contact_information` 
+					(`Name`, `Email`, `Affiliation`, `Role`, `PurposeOfContact`) 
+					VALUES 
+					('$name', '$email', '$affiliation', '$role', '$purposeOfContact');";
+					
+				/*  If it is allowed and necessary to retrieve the hidden field, use this query.
+  				    please make sure that the corresponding parts in Contact.php are valid
+				    and the query above is commented out.
 					
 					$query = "INSERT INTO `pattern_table`.`contact_information` 
 					(`Name`, `Email`, `Affiliation`, `Role`, `PurposeOfContact`, 
@@ -54,7 +68,7 @@
 					('$name', '$email', '$affiliation', '$role', '$purposeOfContact', 
 					'$researchExperience', '$researchTools', '$datasetAnalysed', 
 					'$familiarityWithProcessMining');";
-					
+				*/
 					$result = mysqli_query($cxn, $query)
 					or die("Coudn't execute query. ".mysqli_error($cxn));
 					

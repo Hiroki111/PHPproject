@@ -8,11 +8,22 @@
 	
     <body> 
        
-        <div id="mainContainer">  
+        <div id="mainContainer">
 		 <?php include("menu.php"); ?>
-            <div id="content">             
-                <h2>Event Log Imperfection Patterns - Top Page</h2>             
-                <p>Choose one of the menus above</p> 
+            <div id="content">
+			<h2><center>Welcome to the Event Log Imperfections Patterns home page</center></h2>
+               <?php
+					$cxn = mysqli_connect($host, $user, $password, $dbname)
+					or die("Connection failed" . mysqli_error($cxn));
+					$query = "SELECT * FROM pattern_table.top;";
+					
+					$result = mysqli_query($cxn, $query)
+					or die("Coudn't execute query. " . mysqli_error($cxn));					
+					
+					while ($data = mysqli_fetch_array($result)) {
+						echo '<p>'. $data['Description'] .'</p>';	
+					}
+				?>
 			</div> <!-- end content -->                      
             <?php include("footer.html"); ?> 
 		</div> <!-- end mainContainer --> 
