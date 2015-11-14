@@ -1,7 +1,7 @@
 <!doctype html> 
 <html> 
     <head> 
-        <title>Header and Footer Testing 2</title>
+        <title>Event Log Patterns</title>
 		<script type ="text/javascript"
 		src="https://code.jquery.com/jquery-1.9.1.min.js">
 		</script>
@@ -10,7 +10,7 @@
 	
     <body>
         <?php
-			include("MySQL_AccountInformation.php");
+			
 			$PatternName = $_GET['PatternName'];
 		?> 	
         <?php include("menu.php"); ?>

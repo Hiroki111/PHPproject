@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>Edit page_top</title>
-		<link rel= "stylesheet" type ="text/css" href="admin.css"> 
+		<link rel= "stylesheet" type ="text/css" href="Admin.css"> 
 		
 	</head>
 	
@@ -10,7 +10,7 @@
 		<div id="header"><h2>EDIT PAGE</h2> </div>          
 		
 		<p>Enter the ID</p>
-		<form action = "edit.php" method ="get">
+		<form action = "Edit.php" method ="get">
 			<input type ="text" name= "Id" value ="">
 			<br>
 			<br>

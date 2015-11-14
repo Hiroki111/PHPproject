@@ -15,13 +15,13 @@
 
 <div id ="header">
 	<h2>
-		<a href="top.php">Event Log Imperfection Patterns</a>
+		<a href="Top.php">Event Log Imperfection Patterns</a>
 	</h2>
 </div>
 <div id="menu">           
 	<ul>
 		<!-- 1st level menu-->		
-		<li><a href="top.php">Home</a></li>              
+		<li><a href="Top.php">Home</a></li>              
 		<li><a href="#">Patterns</a>
 			<ul>
 				<!-- 2nd level menu-->				

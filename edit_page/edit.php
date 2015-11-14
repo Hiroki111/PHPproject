@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>Edit page</title>
-		<link rel= "stylesheet" type ="text/css" href="admin.css"> 
+		<link rel= "stylesheet" type ="text/css" href="Admin.css"> 
 		
 	</head>
 	
@@ -45,7 +45,7 @@
 			}
 			
 		?>	
-		<form action = "update.php" method ="post">
+		<form action = "Update.php" method ="post">
 			Patten Name
 			<br>
 			<textarea class ="inputNewPatternName" 

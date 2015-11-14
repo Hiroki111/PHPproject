@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>EDITED</title>
-		<link rel= "stylesheet" type ="text/css" href="admin.css"> 
+		<link rel= "stylesheet" type ="text/css" href="Admin.css"> 
 	</head>
 	
 	<body>
@@ -51,7 +51,7 @@
 			}
 		?>
 		
-		<p><a href ="edit_top.php">Return to the top page</a></p>
+		<p><a href ="Edit_top.php">Return to the top page</a></p>
 	</body>
 	
 </html>						

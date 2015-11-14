@@ -35,7 +35,7 @@
     <body>
         <?php 
 			include("menu.php");
-			include("MySQL_AccountInformation.php"); //Is it necessary? menu.php includes it.
+			
 			
 		?>
         <div id="mainContainer">           
